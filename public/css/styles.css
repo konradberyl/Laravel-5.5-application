@@ -1,0 +1,56 @@
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding:20px;
+    font-size: 30px;
+    height: 60px;
+    background-color: #eee;
+
+    text-align: center;
+}
+
+.user-text{
+    color: #954120;
+}
+.section-header{
+    padding: 20px;
+    background-color: #eee; 
+}
+.basic-content{
+    padding:10px;
+}
+
+body{
+    background-color: transparent;
+    position: relative;
+}
+
+html{
+
+}
+
+.img-wrapper{
+
+    height: calc(100vh - (60px));
+    position: relative;
+    z-index: 1;
+}
+.img-wrapper::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("/images/laravel.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.1;
+}  
+
