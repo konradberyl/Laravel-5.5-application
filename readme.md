@@ -4,6 +4,19 @@ This is my first Laravel application, based on Laravel 5.5. Application equals a
 Using Eloquent Models, database migrations and database seeders. Views was designed in blade. This app is still on production,
 will be gradually expanded.
 
+## installation & run
+1. Create local database f.e. `laravel_db`
+2. In project root folder, rename file `.env.example` to `.env`
+and set your database connection data inside
+3. Run `composer install`
+4. Run `php artisan key:generate`
+5. Run `php artisan migrate`
+6. Run `php artisan db:seed --class=UsersSeeder`
+7. Run `php artisan db:seed --class=UsersFieldsSeeder`
+
+In last step run `php artisan serve` and now you can run application
+at : `http://127.0.0.1:8000`
+
 ## WEB
 To check what app contains, you should login to application:
 email:  laraveladmin@laravel.lar
