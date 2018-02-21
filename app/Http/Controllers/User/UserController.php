@@ -10,6 +10,11 @@ use App\Repositories\UserRepository;
 class UserController extends Controller
 {
 
+    /**
+     *
+     * @param UserRepository $userRepository
+     * @return string
+     */
     public function index(UserRepository $userRepository)
     {
         $users = $userRepository->getAll();
@@ -18,11 +23,6 @@ class UserController extends Controller
 
         return view('user.list',
             ['users' => $users, 'title' => 'lista użytkowników']);
-    }
-
-    public function store(UserRepository $userRepository, Request $request)
-    {
-        
     }
 
     public function insertNew(UserRepository $userRepository)

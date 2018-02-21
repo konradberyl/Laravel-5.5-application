@@ -25,20 +25,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="surname" class="col-md-4 control-label">Surname</label>
-
-                            <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}" required autofocus>
-
-                                @if ($errors->has('surname'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('surname') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>
-
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
@@ -74,6 +60,49 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
+                        <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
+                            <label for="age" class="col-md-4 control-label">Age</label>
+
+                            <div class="col-md-6">
+                                <input id="age" type="text" class="form-control" name="age" value="{{ old('age') }}" required autofocus>
+
+                                @if ($errors->has('age'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('age') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('profession') ? ' has-error' : '' }}">
+                            <label for="profession" class="col-md-4 control-label">Profession</label>
+
+                            <div class="col-md-6">
+                                <input id="profession" type="text" class="form-control" name="profession" value="{{ old('profession') }}" required autofocus>
+
+                                @if ($errors->has('profession'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('profession') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('town') ? ' has-error' : '' }}">
+                            <label for="town" class="col-md-4 control-label">Town</label>
+
+                            <div class="col-md-6">
+                                <input id="town" type="text" class="form-control" name="town" value="{{ old('town') }}" required autofocus>
+
+                                @if ($errors->has('town'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('town') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

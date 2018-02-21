@@ -48,10 +48,12 @@ use RegistersUsers;
     {
         return Validator::make($data,
                 [
-                'name' => 'required|string|min:3|max:255',
-                'surname' => 'required|string|min:3|max:255',
+                'name' => 'required|string|min:3|max:255|unique:users',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6|confirmed|max:255',
+                'age' => 'required|integer|min:8|max:100',
+                'profession' => 'required|string|max:255',
+                'town' => 'required|string|max:255'
         ]);
     }
 
@@ -65,10 +67,12 @@ use RegistersUsers;
     {
         return User::create([
                 'name' => $data['name'],
-                'surname' => $data['surname'],
                 'email' => $data['email'],
                 'password' => bcrypt($data['password']),
-                'type' => 'user'
+                'age' => $data['age'],
+                'profession' => $data['profession'],
+                'town' => $data['town'],
+                'accessType' => 0
         ]);
     }
 }
