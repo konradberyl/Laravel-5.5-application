@@ -14,26 +14,32 @@ class UsersSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'admin',
-            'surname' => 'admin',
             'email' => 'laraveladmin@laravel.lar',
             'password' => bcrypt('laraveladmin'),
-            'type' => 'admin'
+            'age' => '24',
+            'profession' => 'developer',
+            'town' => 'Biała Podlaska',
+            'accessType' => 2
         ]);
 
         DB::table('users')->insert([
             'name' => 'moderator',
-            'surname' => 'moderator',
-            'email' => 'laravelmoderator@laravel.mod',
+            'email' => 'laravelmoderator@laravel.lar',
             'password' => bcrypt('laravelmoderator'),
-            'type' => 'moderator'
+            'age' => '32',
+            'profession' => 'speaker',
+            'town' => 'Warszawa',
+            'accessType' => 1
         ]);
 
         DB::table('users')->insert([
             'name' => 'user',
-            'surname' => 'user',
-            'email' => 'laraveluser@laravel.usr',
+            'email' => 'laraveluser@laravel.lar',
             'password' => bcrypt('laraveluser'),
-            'type' => 'user'
+            'age' => '26',
+            'profession' => 'writer',
+            'town' => 'Wrocław',
+            'accessType' => 0
         ]);
     }
 }

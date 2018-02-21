@@ -4,30 +4,30 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use App\Repositories\UserRepository;
+use App\Services\User\UserService;
 
 class UserController extends Controller
 {
 
-    public function index(UserRepository $userRepository)
+    /**
+     * @param UserService $userService
+     * @return string
+     */
+    public function index(UserService $userService)
     {
-        $users = $userRepository->getAll();
+        $users = $userService->getUsers();
 
-        $developers = $userRepository->getDeveloperProfession();
-
-        return view('user.list',
-            ['users' => $users, 'title' => 'lista użytkowników']);
+        return view('user.list', ['users' => $users, 'title' => 'user list']);
     }
 
-    public function store(UserRepository $userRepository, Request $request)
+    /**
+     * Insert new user by button
+     * @param UserService $userService
+     * @return redirect
+     */
+    public function insertNew(UserService $userService)
     {
-        
-    }
-
-    public function insertNew(UserRepository $userRepository)
-    {
-        $userRepository->createUserWithFields();
+        $userService->insertStaticUser();
 
         return redirect('users');
     }

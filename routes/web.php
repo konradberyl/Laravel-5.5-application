@@ -16,8 +16,7 @@ Route::get('/', function () {
 
 Route::get('users', 'User\UserController@index')->middleware('auth');
 
-Route::get('users/details/{id}', 'User\UserDetailController@index')->name('userDetails')->middleware('auth');
-Route::get('users/add', 'User\UserController@insertNew')->name('userAdd')->middleware('auth');
+Route::get('users/add', 'User\UserController@insertNew')->name('user.insertNew')->middleware('auth');
 
 Auth::routes();
 

@@ -16,9 +16,9 @@
     <h2>Welcome on the Laravel 5.5 web application.</h2>
 
     <h3>@if(Auth::check())
-      You have access as: {{ Auth::user()->type }}
+      Now you can use application.
       @else
-      You have no access to anything. Please login.
+      You do not have access to application. Please login.
       @endif
     </h3>
 </div>

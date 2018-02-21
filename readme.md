@@ -11,8 +11,7 @@ and set your database connection data inside
 3. Run `composer install`
 4. Run `php artisan key:generate`
 5. Run `php artisan migrate`
-6. Run `php artisan db:seed --class=UsersSeeder`
-7. Run `php artisan db:seed --class=UsersFieldsSeeder`
+6. Run `php artisan make:seeder`
 
 In last step run `php artisan serve` and now you can run application
 at : `http://127.0.0.1:8000`
@@ -41,5 +40,4 @@ App return details about user admin.
 # version 1.0
 - created authorization based on Laravel Auth component
 - created user list with static user adding
-- added additional fields for every user 
 - created WEB API  with login, register and some user details
