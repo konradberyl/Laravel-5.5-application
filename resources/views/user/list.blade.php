@@ -9,7 +9,7 @@
 @section('content')
 <div class="text-center section-header">
     <h1 class="text-center">User list</h1>
-    <a href="{{ route('userAdd') }}">add  static user</a>
+    <a href="{{ route('user.insertNew') }}">add  static user</a>
 </div>
 
 <table class="table">
@@ -17,23 +17,31 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
-            <th scope="col">Surname</th>
             <th scope="col">Email</th>
-            <th scope="col">Type of permission</th>
-            <th scope="col">Details</th>
+            <th scope="col">Age</th>
+            <th scope="col">Profession</th>
+            <th scope="col">Town</th>
+            <th scope="col">Role</th>
 
         </tr>
     </thead>
     <tbody>
         @foreach ($users as $user)
         <tr>
-
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
-            <td>{{ $user->surname }}</td>
             <td>{{ $user->email }}</td>
-            <td>{{ $user->type }}</td>
-            <td><a  class="btn btn-warning" href="{{ URL::to('/users/details/'. $user->id) }}">show details</a></td>
+            <td>{{ $user->age }}</td>
+            <td>{{ $user->profession }}</td>
+            <td>{{ $user->town }}</td>
+            <td>@if($user->accessType === 2)
+                <span class="role-admin-text">admin</span>
+                @elseif($user->accessType === 1)
+                <span class="role-moderator-text">moderator</span>
+                @else
+                <span class="role-user-text">user</span>
+                @endif
+            </td>
         </tr>
         @endforeach
     </tbody>

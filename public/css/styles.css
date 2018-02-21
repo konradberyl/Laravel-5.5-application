@@ -28,10 +28,6 @@ body{
     position: relative;
 }
 
-html{
-
-}
-
 .img-wrapper{
 
     height: calc(100vh - (60px));
@@ -53,4 +49,13 @@ html{
     background-size: cover;
     opacity: 0.1;
 }  
+.role-admin-text{
+    color: #ff0000;
+}
 
+.role-moderator-text{
+    color: #0066ff;
+}
+.role-user-text{
+    color: #33cc33;
+}
