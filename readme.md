@@ -41,3 +41,6 @@ App return details about user admin.
 - created authorization based on Laravel Auth component
 - created user list with static user adding
 - created WEB API  with login, register and some user details
+
+# version 1.1
+- editable user account
