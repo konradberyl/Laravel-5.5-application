@@ -14,10 +14,13 @@ Route::get('/', function () {
     return view('main/main');
 });
 
-Route::get('users', 'User\UserController@index')->middleware('auth');
+Route::get('user/list', 'User\UserController@index')->middleware('auth');
 
 Route::get('users/add', 'User\UserController@insertNew')->name('user.insertNew')->middleware('auth');
 
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
+
+Route::get('user/account', 'User\UserController@updateForm')->name('user.update.form')->middleware('auth');
+Route::post('user/update', 'User\UserController@update')->name('user.update')->middleware('auth');

@@ -36,4 +36,17 @@ class UserService
 
         return $users;
     }
+
+    /**
+     * check additional info before update user
+     * @param Object $request
+     * @return array
+     */
+    public function prepareUpdateUserData($request)
+    {
+        $data = $request->filled('password') ? array_merge($request->except('password'),
+                ['password' => bcrypt($request->input('password'))]) : $request->except('password');
+
+        return $data;
+    }
 }
